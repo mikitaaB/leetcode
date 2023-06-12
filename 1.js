@@ -4,12 +4,15 @@
  * @return {number[]}
  */
 const twoSum = (nums, target) => {
+	const numsMap = new Map();
 	for (let i = 0; i < nums.length; i++) {
 		const iDiff = target - nums[i];
-		if (nums.includes(iDiff) && nums.indexOf(iDiff) !== i) {
-			return [i, nums.indexOf(iDiff)];
+		if (numsMap.has(iDiff)) {
+			return [numsMap.get(iDiff), i];
 		}
+		numsMap.set(nums[i], i);
 	}
+	return [];
 };
 
 console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]

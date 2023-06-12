@@ -3,7 +3,7 @@ const lengthOfLastWord = (s) => {
 	s = s.trim();
 	const strLength = s.length;
 	const space = " ";
-	if (!s.includes(space)) {
+	if (s.indexOf(space) === -1) {
 		return strLength;
 	}
 	for (let i = strLength - 1; i >= 0; i--) {

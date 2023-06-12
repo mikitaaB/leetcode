@@ -16,3 +16,6 @@ const strStr = (haystack, needle) => {
 	}
 	return -1;
 };
+
+console.log(strStr("sadbutsad", "sad")); // 0
+console.log(strStr("leetcode", "leeto")); // -1
