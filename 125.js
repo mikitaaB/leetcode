@@ -6,6 +6,11 @@ const isNotAlnum = (char) => char.match(/[^A-Za-z0-9]/);
  * @param {string} s
  * @return {boolean}
  */
+/**
+ * Complexity:
+ * Space: O(1)
+ * Time: O(n)
+ */
 const isPalindrome = (s) => {
 	let left = 0;
 	let right = s.length - 1;
@@ -16,7 +21,7 @@ const isPalindrome = (s) => {
 		while (right > left && isNotAlnum(s[right])) {
 			right--;
 		}
-		if (s[left].toLowerCase() != s[right].toLowerCase()) {
+		if (s[left].toLowerCase() !== s[right].toLowerCase()) {
 			return false;
 		}
 		left++;
@@ -39,14 +44,15 @@ const reverseString = (str) => {
  * @param {string} s
  * @return {boolean}
  */
+/**
+ * Complexity:
+ * Space: O(n)
+ * Time: O(n)
+ */
 const isPalindrome_2 = function (s) {
 	const str = s.toLowerCase().replace(/[^A-Za-z0-9]/g, "");
 	return str === reverseString(str);
 };
-
-console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
-console.log(isPalindrome("race a car")); // false
-console.log(isPalindrome(" ")); // true
 
 // Third solution
 
@@ -54,7 +60,16 @@ console.log(isPalindrome(" ")); // true
  * @param {string} s
  * @return {boolean}
  */
+/**
+ * Complexity:
+ * Space: O(n)
+ * Time: O(n)
+ */
 const isPalindrome_3 = (s) => {
 	const str = s.toLowerCase().replace(/[^A-Za-z0-9]/g, "");
 	return str === str.split("").reverse().join("");
 };
+
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+console.log(isPalindrome("race a car")); // false
+console.log(isPalindrome(" ")); // true
