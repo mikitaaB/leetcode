@@ -3,6 +3,11 @@
  * @param {number} target
  * @return {number[]}
  */
+/**
+ * Complexity:
+ * Space: O(n)
+ * Time: O(n)
+ */
 const twoSum = (nums, target) => {
 	const numsMap = new Map();
 	for (let i = 0; i < nums.length; i++) {
